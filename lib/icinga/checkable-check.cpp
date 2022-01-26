@@ -508,7 +508,7 @@ void Checkable::ProcessCheckResult(const CheckResult::Ptr& cr, const MessageOrig
 	}
 
 	/* update reachability for child objects */
-	if (!children.empty())
+	if (stateChange && !children.empty())
 		OnReachabilityChanged(this, cr, children, origin);
 }
 
